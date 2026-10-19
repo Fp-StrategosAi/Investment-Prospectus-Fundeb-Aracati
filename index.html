@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Fundeb · Aracati-CE · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1A2C;
+  --navy-2:#17263D;
+  --gold:#C9A861;
+  --cream:#F8F5EE;
+  --card:#FCFBF6;
+  --neutral:#F5F6FA;
+  --ink:#1C2433;
+  --ink-soft:#5A6373;
+  --rule:#E2DED2;
+
+  --vaaf:#C9A861;
+  --vaat:#5B87A3;
+  --vaar:#7A9A5B;
+  --imp:#4A5A72;
+
+  --ok:#3F7D52;
+  --warn:#B98A24;
+  --risk:#A9453A;
+
+  --display:"Cormorant Garamond",Georgia,serif;
+  --body:"Inter",Carlito,Calibri,system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ---------- CABEÇALHO ---------- */
+.masthead{
+  background:var(--navy);
+  color:var(--cream);
+  padding:38px 0 44px;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+.brandbar{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;flex-wrap:wrap;
+  padding-bottom:22px;border-bottom:1px solid rgba(201,168,97,.32);
+}
+.brandmark{display:flex;align-items:center;gap:12px}
+.glyph{
+  width:26px;height:26px;flex:none;position:relative;
+  border:1.5px solid var(--cream);border-radius:3px;
+}
+.glyph::before{content:"";position:absolute;inset:5px 5px auto auto;width:7px;height:7px;background:var(--gold)}
+.glyph::after{content:"";position:absolute;left:5px;bottom:5px;width:11px;height:1.5px;background:var(--cream);box-shadow:0 -4px 0 var(--cream)}
+.brandname{font-family:var(--display);font-size:1.02rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600}
+.brandsub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.stamp{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,245,238,.62);text-align:right}
+.stamp b{color:var(--gold);font-weight:600}
+
+.title-block{padding-top:34px;max-width:820px}
+.eyebrow{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(2.3rem,5.4vw,3.5rem);line-height:1.06;letter-spacing:-.01em;
+}
+h1 em{font-style:italic;color:var(--gold)}
+.lede{
+  font-family:var(--display);font-style:italic;font-weight:300;
+  font-size:clamp(1.02rem,2vw,1.28rem);line-height:1.5;
+  color:rgba(248,245,238,.8);margin-top:16px;max-width:660px;
+}
+
+/* ---------- TRILHO DO ANO (assinatura) ---------- */
+.rail-zone{background:var(--navy-2);padding:34px 0 42px;color:var(--cream)}
+.rail-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.rail-head h2{font-family:var(--display);font-weight:400;font-size:1.5rem}
+.rail-head span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,245,238,.55)}
+.rail{
+  display:flex;height:60px;border:1px solid rgba(201,168,97,.4);
+  border-radius:2px;overflow:hidden;
+}
+.rail div{display:flex;align-items:center;justify-content:center;position:relative}
+.rail .paid{background:var(--gold);color:var(--navy)}
+.rail .jul{background:rgba(201,168,97,.55);color:var(--navy)}
+.rail .open{background:transparent;
+  background-image:repeating-linear-gradient(135deg,rgba(248,245,238,.14) 0 6px,transparent 6px 13px);
+  color:var(--cream)}
+.rail b{font-size:.78rem;font-weight:600;letter-spacing:.02em;padding:0 6px;text-align:center}
+.rail-legend{display:flex;gap:26px;flex-wrap:wrap;margin-top:14px;font-size:.78rem;color:rgba(248,245,238,.78)}
+.rail-legend i{display:inline-block;width:11px;height:11px;margin-right:7px;vertical-align:-1px;border:1px solid rgba(201,168,97,.5)}
+.rail-legend .k1 i{background:var(--gold)}
+.rail-legend .k2 i{background:rgba(201,168,97,.55)}
+.rail-legend .k3 i{background-image:repeating-linear-gradient(135deg,rgba(248,245,238,.3) 0 4px,transparent 4px 9px)}
+
+/* ---------- SEÇÕES ---------- */
+section{padding:56px 0}
+section.alt{background:#FFFDF8;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.sec-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:30px}
+.sec-num{font-family:var(--display);font-size:1.5rem;color:var(--gold);font-weight:600;line-height:1;padding-top:4px}
+.sec-num::after{content:"";display:block;width:26px;height:2px;background:var(--gold);margin-top:8px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.2vw,2.1rem);line-height:1.15}
+.sec-head p{color:var(--ink-soft);max-width:640px;margin-top:8px;font-size:.93rem}
+
+/* ---------- KPIs ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
+.kpi{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--gold);padding:20px 20px 18px}
+.kpi .lab{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);min-height:26px}
+.kpi .val{font-family:var(--display);font-size:2.25rem;font-weight:600;line-height:1.1;margin-top:8px}
+.kpi .val small{font-size:.95rem;font-weight:400;color:var(--ink-soft);margin-left:3px}
+.kpi .note{font-size:.79rem;color:var(--ink-soft);margin-top:7px;border-top:1px solid var(--rule);padding-top:7px}
+.kpi.dark{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.kpi.dark .lab,.kpi.dark .note{color:rgba(248,245,238,.68);border-color:rgba(201,168,97,.28)}
+.kpi.dark .val{color:var(--gold)}
+
+/* ---------- COMPONENTES ---------- */
+.comps{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
+.comp{background:#fff;border:1px solid var(--rule);padding:22px}
+.comp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.comp-name{font-family:var(--display);font-size:1.42rem;font-weight:600;line-height:1.1}
+.comp-name span{display:block;font-family:var(--body);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;margin-top:5px}
+.tagpill{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:2px;color:#fff;font-weight:600;white-space:nowrap}
+.bar{height:10px;background:var(--neutral);border:1px solid var(--rule);display:flex;margin:16px 0 10px}
+.bar i{display:block;height:100%}
+.lines{font-size:.86rem}
+.lines .row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dotted var(--rule)}
+.lines .row:last-child{border-bottom:0}
+.lines .row b{font-variant-numeric:tabular-nums;font-weight:600}
+.lines .row.hi{background:var(--neutral);margin:6px -8px 0;padding:8px;border-bottom:0}
+.lines .row.hi b{font-size:1.02rem}
+.comp-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);font-size:.82rem;color:var(--ink-soft)}
+
+/* ---------- TABELA ---------- */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--rule);background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:640px}
+thead th{background:var(--navy);color:var(--cream);text-align:right;padding:12px 14px;font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600}
+thead th:first-child{text-align:left}
+tbody td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+tbody td:first-child{text-align:left;font-weight:500}
+tbody tr:nth-child(even){background:#FAF9F4}
+tbody tr.total td{background:var(--navy);color:var(--cream);font-weight:600;border-bottom:0}
+.swatch{display:inline-block;width:9px;height:9px;margin-right:8px;vertical-align:0}
+
+/* ---------- MESES ---------- */
+.months{display:flex;align-items:flex-end;gap:8px;height:150px;margin-top:6px}
+.months .m{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.months .m i{display:block;width:100%;background:var(--vaat);border-top:2px solid var(--navy)}
+.months .m.pend i{background:repeating-linear-gradient(135deg,#D8DDE4 0 5px,#EDF0F3 5px 10px);border-top:2px dashed var(--ink-soft)}
+.months .m u{text-decoration:none;font-size:.72rem;font-weight:600;margin-bottom:5px;font-variant-numeric:tabular-nums}
+.months .m em{font-style:normal;font-size:.68rem;color:var(--ink-soft);margin-top:7px;letter-spacing:.04em}
+
+/* ---------- LIMITES ---------- */
+.limits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.lim{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--ok);padding:18px}
+.lim.warn{border-left-color:var(--warn)}
+.lim.risk{border-left-color:var(--risk)}
+.lim h4{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.lim .num{font-family:var(--display);font-size:2rem;font-weight:600;margin:8px 0 2px;color:var(--ok)}
+.lim.warn .num{color:var(--warn)}
+.lim.risk .num{color:var(--risk)}
+.lim .req{font-size:.8rem;color:var(--ink-soft)}
+.lim .verdict{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);font-size:.83rem}
+
+/* ---------- USOS ---------- */
+.uses{display:grid;gap:18px}
+.use{background:#fff;border:1px solid var(--rule);display:grid;grid-template-columns:210px 1fr;}
+.use-side{background:var(--navy);color:var(--cream);padding:22px}
+.use-side .tag{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.use-side .amt{font-family:var(--display);font-size:1.85rem;font-weight:600;margin-top:10px;line-height:1.05}
+.use-side .amtlab{font-size:.74rem;color:rgba(248,245,238,.62);margin-top:5px}
+.use-body{padding:22px 24px}
+.use-body h4{font-family:var(--display);font-size:1.22rem;font-weight:600;margin-bottom:4px}
+.use-body .rule{font-size:.8rem;color:var(--ink-soft);margin-bottom:13px;padding-bottom:11px;border-bottom:1px solid var(--rule)}
+.use-body ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:7px 22px}
+.use-body li{font-size:.88rem;padding-left:16px;position:relative}
+.use-body li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;background:var(--gold)}
+.use-body .caution{margin-top:14px;background:var(--neutral);border-left:3px solid var(--gold);padding:11px 14px;font-size:.84rem}
+.use-body .caution b{color:var(--risk)}
+
+/* ---------- PRIORIDADES ---------- */
+.prio{counter-reset:p;display:grid;gap:0;border:1px solid var(--rule);background:#fff}
+.prio .p{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--rule)}
+.prio .p:last-child{border-bottom:0}
+.prio .p .n{counter-increment:p;font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--cream);background:var(--navy);width:38px;height:38px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.prio .p .n::before{content:counter(p,decimal-leading-zero)}
+.prio .p h5{font-size:.98rem;font-weight:600;margin-bottom:3px}
+.prio .p p{font-size:.85rem;color:var(--ink-soft)}
+.prio .p .v{font-family:var(--display);font-size:1.3rem;font-weight:600;white-space:nowrap;text-align:right}
+.prio .p .v small{display:block;font-family:var(--body);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+
+.callout{background:var(--navy);color:var(--cream);border-left:5px solid var(--gold);padding:26px 30px;margin-top:32px}
+.callout p{font-family:var(--display);font-style:italic;font-size:1.14rem;line-height:1.55;color:rgba(248,245,238,.9)}
+.callout p b{color:var(--gold);font-style:normal;font-weight:600}
+
+/* ---------- RODAPÉ ---------- */
+footer{background:var(--navy);color:rgba(248,245,238,.6);padding:38px 0 30px;font-size:.79rem}
+footer h5{color:var(--gold);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:11px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;padding-bottom:24px;border-bottom:1px solid rgba(201,168,97,.25)}
+.fgrid ul{list-style:none;display:grid;gap:6px}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;font-size:.72rem;letter-spacing:.04em}
+
+@media (max-width:760px){
+  .wrap{padding:0 18px}
+  .use{grid-template-columns:1fr}
+  .prio .p{grid-template-columns:44px 1fr;row-gap:8px}
+  .prio .p .v{grid-column:2;text-align:left}
+  .rail{height:52px}
+  .rail b{font-size:.68rem}
+  .months{height:120px;gap:4px}
+  .months .m u{font-size:.6rem}
+  .months .m em{font-size:.58rem}
+}
+@media print{
+  body{background:#fff}
+  section{padding:26px 0;break-inside:avoid}
+  .masthead,.rail-zone,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- CABEÇALHO -->
+<header class="masthead">
+  <div class="wrap">
+    <div class="brandbar">
+      <div class="brandmark">
+        <div class="glyph"></div>
+        <div>
+          <div class="brandname">Strategos</div>
+          <div class="brandsub">AI Consulting</div>
+        </div>
+      </div>
+      <div class="stamp">
+        Painel de Inteligência Fiscal<br>
+        <b>Aracati · Ceará · Exercício 2026</b>
+      </div>
+    </div>
+
+    <div class="title-block">
+      <div class="eyebrow">Fundeb · Posição de caixa e saldo aplicável</div>
+      <h1>O que ainda há <em>disponível</em> para a educação de Aracati em 2026</h1>
+      <p class="lede">Dos R$ 146,89 milhões previstos para o município neste exercício, pouco mais da metade já entrou. Este painel separa o previsto, o recebido e o saldo por componente — VAAF, VAAT e VAAR — e indica onde cada real ainda pode ser aplicado.</p>
+    </div>
+  </div>
+</header>
+
+<!-- TRILHO DO ANO -->
+<div class="rail-zone">
+  <div class="wrap">
+    <div class="rail-head">
+      <h2>O ano inteiro em uma linha</h2>
+      <span>Receita Fundeb 2026 · R$ 146,89 Mi</span>
+    </div>
+    <div class="rail">
+      <div class="paid" style="flex:0 0 52.1%"><b>R$ 76,57 Mi recebidos<br>até 30/jun</b></div>
+      <div class="jul" style="flex:0 0 7.3%"><b>+10,7 Mi<br>jul</b></div>
+      <div class="open" style="flex:1"><b>R$ 59,62 Mi a receber · ago a dez</b></div>
+    </div>
+    <div class="rail-legend">
+      <span class="k1"><i></i>Recebido e contabilizado no SIOPE (3º bimestre)</span>
+      <span class="k2"><i></i>Repasse de julho apurado no painel do FNDE</span>
+      <span class="k3"><i></i>Saldo a receber até dezembro</span>
+    </div>
+  </div>
+</div>
+
+<!-- 01 VISÃO DO ANO -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div>
+        <h2>Visão do exercício</h2>
+        <p>Três números respondem à pergunta central: quanto o município tem no ano, quanto já entrou e quanto ainda vem. O caixa disponível é medido em 30 de junho, fechamento do 3º bimestre.</p>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="lab">Previsto para 2026</div>
+        <div class="val">146,89<small>Mi</small></div>
+        <div class="note">R$ 66,30 Mi de impostos e transferências + R$ 80,59 Mi de complementação da União.</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">Recebido até o 3º bimestre</div>
+        <div class="val">76,57<small>Mi</small></div>
+        <div class="note">52,1% do previsto. O painel do FNDE já registra R$ 87,27 Mi pagos até julho.</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">A receber até dezembro</div>
+        <div class="val">59,62<small>Mi</small></div>
+        <div class="note">Saldo a repassar de agosto a dezembro, considerando o pago até julho.</div>
+      </div>
+      <div class="kpi dark">
+        <div class="lab">Disponível em conta em 30/jun</div>
+        <div class="val">15,83<small>Mi</small></div>
+        <div class="note">Saldo financeiro conciliado do Fundeb — dinheiro em caixa, não empenhado a pagar.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Somando o caixa de 30 de junho ao que ainda entra até dezembro, Aracati tem <b>R$ 86,14 milhões</b> para executar no segundo semestre. Descontando os <b>R$ 6,51 milhões</b> já empenhados e ainda não pagos, a margem livre para novas decisões é de <b>R$ 79,64 milhões</b> — mais da metade do Fundeb do ano ainda está por ser decidida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 COMPONENTES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div>
+        <h2>Separado por componente</h2>
+        <p>Cada fonte tem regra própria de aplicação. O saldo a receber é a diferença entre o previsto pelo FNDE para o ano e o efetivamente recebido até 30 de junho.</p>
+      </div>
+    </div>
+
+    <div class="comps">
+
+      <div class="comp">
+        <div class="comp-top">
+          <div class="comp-name">VAAF<span>Valor Anual por Aluno · Fonte 541/546</span></div>
+          <div class="tagpill" style="background:var(--vaaf)">51% recebido</div>
+        </div>
+        <div class="bar"><i style="background:var(--vaaf);width:51.1%"></i></div>
+        <div class="lines">
+          <div class="row"><span>Previsto 2026</span><b>R$ 36.790.000</b></div>
+          <div class="row"><span>Recebido até 3º bim.</span><b>R$ 18.807.699</b></div>
+          <div class="row"><span>Empenhado até 3º bim.</span><b>R$ 11.004.701</b></div>
+          <div class="row hi"><span>Saldo a receber</span><b>R$ 17.982.301</b></div>
+        </div>
+        <div class="comp-foot">Inclui os valores da EC 135/2024 registrados na fonte 546 (ETI), por opção da NT SEI nº 5461/2025/MF.</div>
+      </div>
+
+      <div class="comp">
+        <div class="comp-top">
+          <div class="comp-name">VAAT<span>Valor Anual Total por Aluno · Fonte 542</span></div>
+          <div class="tagpill" style="background:var(--vaat)">52% recebido</div>
+        </div>
+        <div class="bar"><i style="background:var(--vaat);width:51.7%"></i></div>
+        <div class="lines">
+          <div class="row"><span>Previsto 2026</span><b>R$ 35.700.000</b></div>
+          <div class="row"><span>Recebido até 3º bim.</span><b>R$ 18.455.014</b></div>
+          <div class="row"><span>Empenhado até 3º bim.</span><b>R$ 22.092.045</b></div>
+          <div class="row hi"><span>Saldo a receber</span><b>R$ 17.244.986</b></div>
+        </div>
+        <div class="comp-foot">Empenho já supera a receita do ano em R$ 3,64 Mi — está consumindo o superávit de 2025. É a fonte mais adiantada na execução.</div>
+      </div>
+
+      <div class="comp">
+        <div class="comp-top">
+          <div class="comp-name">VAAR<span>Valor Aluno-Ano Resultado · Fonte 543</span></div>
+          <div class="tagpill" style="background:var(--vaar)">46% recebido</div>
+        </div>
+        <div class="bar"><i style="background:var(--vaar);width:45.7%"></i></div>
+        <div class="lines">
+          <div class="row"><span>Previsto 2026</span><b>R$ 8.100.000</b></div>
+          <div class="row"><span>Recebido até 3º bim.</span><b>R$ 3.700.850</b></div>
+          <div class="row"><span>Empenhado até 3º bim.</span><b>R$ 13.029</b></div>
+          <div class="row hi"><span>Saldo a receber</span><b>R$ 4.399.150</b></div>
+        </div>
+        <div class="comp-foot"><b>Praticamente intocado:</b> apenas 0,35% do que entrou foi empenhado. Somando caixa e saldo a receber, há R$ 8,09 Mi de VAAR livres em 2026.</div>
+      </div>
+
+      <div class="comp">
+        <div class="comp-top">
+          <div class="comp-name">Impostos e transferências<span>Cota municipal do Fundeb · Fonte 540</span></div>
+          <div class="tagpill" style="background:var(--imp)">54% recebido</div>
+        </div>
+        <div class="bar"><i style="background:var(--imp);width:53.6%"></i></div>
+        <div class="lines">
+          <div class="row"><span>Previsto 2026</span><b>R$ 66.300.000</b></div>
+          <div class="row"><span>Recebido até 3º bim.</span><b>R$ 35.511.967</b></div>
+          <div class="row"><span>Empenhado até 3º bim.</span><b>R$ 47.887.572</b></div>
+          <div class="row hi"><span>Saldo a receber</span><b>R$ 30.788.033</b></div>
+        </div>
+        <div class="comp-foot">Base da folha da educação. Empenho supera a receita do ano em R$ 12,28 Mi, coberto pelo saldo de exercícios anteriores.</div>
+      </div>
+
+    </div>
+
+    <div class="tbl-scroll" style="margin-top:26px">
+      <table>
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Previsto 2026</th>
+            <th>Recebido até 3º bim.</th>
+            <th>% recebido</th>
+            <th>Saldo a receber</th>
+            <th>Empenhado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="swatch" style="background:var(--vaaf)"></span>VAAF (+ ETI fonte 546)</td>
+            <td>36.790.000</td><td>18.807.699</td><td>51,1%</td><td>17.982.301</td><td>11.004.701</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:var(--vaat)"></span>VAAT</td>
+            <td>35.700.000</td><td>18.455.014</td><td>51,7%</td><td>17.244.986</td><td>22.092.045</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:var(--vaar)"></span>VAAR</td>
+            <td>8.100.000</td><td>3.700.850</td><td>45,7%</td><td>4.399.150</td><td>13.029</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:var(--imp)"></span>Impostos e transferências</td>
+            <td>66.300.000</td><td>35.511.967</td><td>53,6%</td><td>30.788.033</td><td>47.887.572</td>
+          </tr>
+          <tr>
+            <td style="padding-left:31px;color:var(--ink-soft)">Rendimentos de aplicação</td>
+            <td>—</td><td>97.844</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr class="total">
+            <td>Total Fundeb</td>
+            <td>146.890.000</td><td>76.573.373</td><td>52,1%</td><td>70.316.627</td><td>80.997.347</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.79rem;color:var(--ink-soft);margin-top:10px">Valores em reais. Previsto conforme painel oficial do FNDE (Portaria Interministerial MEC/MF nº 14/2025). Realizado conforme demonstrativo SIOPE do 3º bimestre/2026. O saldo a receber da tabela toma como referência 30/jun; considerando o repasse de julho já apurado pelo FNDE, restam R$ 59,62 Mi de agosto a dezembro.</p>
+  </div>
+</section>
+
+<!-- 03 RITMO -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div>
+        <h2>Ritmo dos repasses</h2>
+        <p>Valor distribuído mês a mês pelo FNDE. Janeiro concentra a 13ª parcela de 2025 somada à 1ª de 2026 — por isso o pico. O padrão de agosto a dezembro tende a repetir a média mensal de R$ 11 a 13 milhões.</p>
+      </div>
+    </div>
+    <div class="months">
+      <div class="m"><u>21</u><i style="height:100%"></i><em>Jan</em></div>
+      <div class="m"><u>11</u><i style="height:52%"></i><em>Fev</em></div>
+      <div class="m"><u>10</u><i style="height:48%"></i><em>Mar</em></div>
+      <div class="m"><u>11</u><i style="height:52%"></i><em>Abr</em></div>
+      <div class="m"><u>12</u><i style="height:57%"></i><em>Mai</em></div>
+      <div class="m"><u>13</u><i style="height:62%"></i><em>Jun</em></div>
+      <div class="m"><u>11</u><i style="height:52%"></i><em>Jul</em></div>
+      <div class="m pend"><u>~12</u><i style="height:57%"></i><em>Ago</em></div>
+      <div class="m pend"><u>~12</u><i style="height:57%"></i><em>Set</em></div>
+      <div class="m pend"><u>~12</u><i style="height:57%"></i><em>Out</em></div>
+      <div class="m pend"><u>~12</u><i style="height:57%"></i><em>Nov</em></div>
+      <div class="m pend"><u>~12</u><i style="height:57%"></i><em>Dez</em></div>
+    </div>
+    <p style="font-size:.79rem;color:var(--ink-soft);margin-top:14px">Em R$ milhões. Barras cheias: valores efetivamente distribuídos (FNDE). Barras hachuradas: projeção da Strategos, rateando o saldo de R$ 59,62 Mi em cinco parcelas. O calendário oficial prevê repasses mensais até o último dia útil de cada mês, com uma parcela adicional em janeiro de 2027.</p>
+
+    <div class="kpis" style="margin-top:34px">
+      <div class="kpi">
+        <div class="lab">Saldo de 2025 trazido para 2026</div>
+        <div class="val">13,74<small>Mi</small></div>
+        <div class="note">Disponibilidade em 31/12/2025, reprogramada para o exercício.</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">Pago até o 3º bimestre</div>
+        <div class="val">74,49<small>Mi</small></div>
+        <div class="note">Orçamentário mais restos a pagar.</div>
+      </div>
+      <div class="kpi">
+        <div class="lab">Empenhado e ainda não pago</div>
+        <div class="val">6,51<small>Mi</small></div>
+        <div class="note">Compromissos já assumidos que consomem o caixa atual.</div>
+      </div>
+      <div class="kpi dark">
+        <div class="lab">Margem livre para o 2º semestre</div>
+        <div class="val">79,64<small>Mi</small></div>
+        <div class="note">Caixa em 30/jun + saldo a receber − empenhos a pagar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LIMITES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div>
+        <h2>Limites legais: onde está apertado</h2>
+        <p>Os percentuais são apurados sobre o exercício fechado. No meio do ano eles indicam trajetória, não infração — mas dois deles exigem decisão de aplicação ainda neste semestre.</p>
+      </div>
+    </div>
+
+    <div class="limits">
+      <div class="lim">
+        <h4>Mínimo 70% · remuneração</h4>
+        <div class="num">73,40%</div>
+        <div class="req">Exigido R$ 51,01 Mi · aplicado R$ 53,49 Mi</div>
+        <div class="verdict">Cumprido, com folga de R$ 2,48 Mi. O VAAR não entra nesta base de cálculo.</div>
+      </div>
+      <div class="lim">
+        <h4>VAAT na educação infantil (IEI)</h4>
+        <div class="num">67,85%</div>
+        <div class="req">Exigido R$ 9,45 Mi · aplicado R$ 12,52 Mi</div>
+        <div class="verdict">Cumprido, com margem de R$ 3,07 Mi acima do mínimo.</div>
+      </div>
+      <div class="lim warn">
+        <h4>Mínimo 15% · VAAT em capital</h4>
+        <div class="num">10,94%</div>
+        <div class="req">Exigido R$ 2,77 Mi · aplicado R$ 2,02 Mi</div>
+        <div class="verdict"><b>Faltam R$ 749 mil</b> em despesa de capital custeada com VAAT. Como a base cresce com os repasses do 2º semestre, a exigência final também sobe: projete cerca de R$ 5,36 Mi de capital sobre o VAAT do ano inteiro.</div>
+      </div>
+      <div class="lim risk">
+        <h4>Mínimo 4% · Fomento ETI</h4>
+        <div class="num">0,00%</div>
+        <div class="req">Exigido R$ 3,06 Mi · aplicado R$ 0</div>
+        <div class="verdict"><b>Nada aplicado até junho.</b> Vinculação nova, válida a partir de 2026 (EC 135/2024, art. 212-A, XV), regulamentada pela Resolução MEC nº 23/2026. Sobre a receita cheia do ano, a exigência chega a cerca de R$ 5,88 Mi.</div>
+      </div>
+      <div class="lim">
+        <h4>Máximo 10% não aplicado</h4>
+        <div class="num">0,00%</div>
+        <div class="req">Teto de R$ 7,66 Mi de superávit</div>
+        <div class="verdict">Sem risco no momento. Serve de válvula: até 10% da receita pode ser reprogramado para o 1º quadrimestre de 2027.</div>
+      </div>
+      <div class="lim warn">
+        <h4>VAAR aplicado</h4>
+        <div class="num">0,35%</div>
+        <div class="req">Recebido R$ 3,70 Mi · empenhado R$ 13 mil</div>
+        <div class="verdict">Não há percentual mínimo específico, mas o VAAR entra no teto de 10% de superávit. Parado até dezembro, ele vira risco de devolução ou reprogramação forçada.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 USOS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div>
+        <h2>Em que aplicar o que ainda está disponível</h2>
+        <p>Todo recurso do Fundeb só pode custear ações de manutenção e desenvolvimento do ensino, na forma do art. 70 da LDB, e o município aplica na sua área de atuação prioritária — educação infantil e ensino fundamental. Sobre essa base geral, cada componente acrescenta uma trava.</p>
+      </div>
+    </div>
+
+    <div class="uses">
+
+      <div class="use">
+        <div class="use-side" style="background:var(--imp)">
+          <div class="tag">Impostos e transferências</div>
+          <div class="amt">R$ 30,79 Mi</div>
+          <div class="amtlab">a receber até dezembro</div>
+        </div>
+        <div class="use-body">
+          <h4>A fonte da folha</h4>
+          <div class="rule">Regra: compõe a base do mínimo de 70% com remuneração dos profissionais da educação básica em efetivo exercício. Os 30% restantes vão para as demais ações de MDE.</div>
+          <ul>
+            <li>Vencimentos, gratificações e encargos dos profissionais da educação básica</li>
+            <li>Formação continuada de professores e demais profissionais</li>
+            <li>Manutenção predial e conservação de unidades escolares</li>
+            <li>Transporte escolar: contratação, combustível, manutenção da frota</li>
+            <li>Material didático e escolar</li>
+            <li>Rateio de sobras entre os profissionais, se houver lei municipal específica</li>
+          </ul>
+          <div class="caution">Com 73,40% já aplicados em remuneração, a folga é pequena. Se a receita do 2º semestre entrar acima do previsto, a base dos 70% sobe junto — <b>vale simular o fechamento antes de comprometer a parcela dos 30%</b> com custeio.</div>
+        </div>
+      </div>
+
+      <div class="use">
+        <div class="use-side" style="background:var(--vaaf)">
+          <div class="tag">VAAF · fonte 541 e 546</div>
+          <div class="amt">R$ 17,98 Mi</div>
+          <div class="amtlab">a receber até dezembro</div>
+        </div>
+        <div class="use-body">
+          <h4>A fonte mais flexível</h4>
+          <div class="rule">Regra: mesma disciplina do Fundeb geral. Entra na base dos 70% e pode ser aplicada indistintamente entre etapas e modalidades da rede municipal.</div>
+          <ul>
+            <li>Remuneração de profissionais da educação básica</li>
+            <li>Obras de ampliação, reforma e adequação de escolas</li>
+            <li>Aquisição de mobiliário, equipamentos e tecnologia educacional</li>
+            <li>Alimentação escolar em complemento ao PNAE</li>
+            <li>Ações de fomento a novas matrículas em tempo integral</li>
+            <li>Programas de recuperação de aprendizagem</li>
+          </ul>
+          <div class="caution">Há R$ 7,80 Mi já em caixa nesta fonte e ainda não empenhados, além do saldo a receber. <b>É o dinheiro mais livre da mesa</b> e o candidato natural para cobrir a lacuna do fomento ao tempo integral.</div>
+        </div>
+      </div>
+
+      <div class="use">
+        <div class="use-side" style="background:var(--vaat)">
+          <div class="tag">VAAT · fonte 542</div>
+          <div class="amt">R$ 17,24 Mi</div>
+          <div class="amtlab">a receber até dezembro</div>
+        </div>
+        <div class="use-body">
+          <h4>A fonte com dupla trava</h4>
+          <div class="rule">Regra: percentual mínimo na educação infantil, medido pelo indicador IEI, e mínimo de 15% em despesas de capital. As duas travas incidem sobre o VAAT recebido no ano inteiro.</div>
+          <ul>
+            <li>Construção e ampliação de creches e pré-escolas</li>
+            <li>Reforma estrutural de unidades de educação infantil</li>
+            <li>Aquisição de veículos de transporte escolar (capital)</li>
+            <li>Mobiliário e equipamentos permanentes para as escolas</li>
+            <li>Parques, brinquedotecas e espaços de convivência infantil</li>
+            <li>Remuneração de professores da educação infantil</li>
+          </ul>
+          <div class="caution">A trava de capital está em 10,94% e precisa chegar a 15%. <b>Priorize obra e equipamento, não custeio</b>, ao empenhar o VAAT do 2º semestre — projetando a receita cheia do ano, são cerca de R$ 3,3 Mi adicionais em capital.</div>
+        </div>
+      </div>
+
+      <div class="use">
+        <div class="use-side" style="background:var(--vaar)">
+          <div class="tag">VAAR · fonte 543</div>
+          <div class="amt">R$ 8,09 Mi</div>
+          <div class="amtlab">saldo em caixa + a receber</div>
+        </div>
+        <div class="use-body">
+          <h4>O recurso parado</h4>
+          <div class="rule">Regra: prêmio por cumprimento de condicionalidades e melhoria de indicadores. Aplica-se em MDE como qualquer recurso do fundo, mas <em>não</em> compõe a base do mínimo de 70%, o que o torna a fonte mais indicada para investimento e melhoria de qualidade.</div>
+          <ul>
+            <li>Programas de alfabetização na idade certa e recomposição de aprendizagem</li>
+            <li>Formação continuada e material estruturado para professores</li>
+            <li>Avaliação diagnóstica municipal e sistemas de monitoramento</li>
+            <li>Laboratórios, bibliotecas e conectividade nas escolas</li>
+            <li>Bonificação e incentivos ligados a resultado, se houver lei municipal</li>
+            <li>Investimentos que sustentem as condicionalidades do próximo ciclo do VAAR</li>
+          </ul>
+          <div class="caution">Dos R$ 3,70 Mi recebidos, só R$ 13 mil foram empenhados. <b>É o maior ponto de atenção do painel:</b> além do risco de compor superávit acima de 10%, a não aplicação enfraquece justamente os indicadores que garantem o VAAR do ciclo seguinte.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 06 PRIORIDADES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div>
+        <h2>Onde alocar primeiro</h2>
+        <p>Sequência sugerida para o segundo semestre, ordenada por risco de perda ou de descumprimento de limite.</p>
+      </div>
+    </div>
+
+    <div class="prio">
+      <div class="p">
+        <div class="n"></div>
+        <div>
+          <h5>Estruturar o plano de fomento ao tempo integral</h5>
+          <p>Vinculação de 4% vigente desde 2026 e sem nenhuma execução até junho. Cobre criação de novas matrículas: ampliação de salas, jornada estendida de professores, material e equipamento.</p>
+        </div>
+        <div class="v">R$ 5,88 Mi<small>exigência projetada no ano</small></div>
+      </div>
+      <div class="p">
+        <div class="n"></div>
+        <div>
+          <h5>Empenhar o VAAR em programa de qualidade</h5>
+          <p>Recurso quase intocado. Direcionar para alfabetização, formação docente e avaliação diagnóstica preserva as condicionalidades do próximo ciclo.</p>
+        </div>
+        <div class="v">R$ 8,09 Mi<small>caixa + a receber</small></div>
+      </div>
+      <div class="p">
+        <div class="n"></div>
+        <div>
+          <h5>Fechar a trava de capital do VAAT</h5>
+          <p>Obra de creche, veículo escolar ou equipamento permanente. Contratar cedo para garantir liquidação dentro do exercício.</p>
+        </div>
+        <div class="v">R$ 3,3 Mi<small>capital adicional estimado</small></div>
+      </div>
+      <div class="p">
+        <div class="n"></div>
+        <div>
+          <h5>Reservar a folga do VAAF</h5>
+          <p>R$ 7,80 Mi já em caixa e sem empenho. É a fonte com menor restrição e serve de lastro para as duas prioridades anteriores.</p>
+        </div>
+        <div class="v">R$ 7,80 Mi<small>em caixa, não empenhado</small></div>
+      </div>
+      <div class="p">
+        <div class="n"></div>
+        <div>
+          <h5>Simular o fechamento dos 70%</h5>
+          <p>Índice em 73,40% com base de cálculo ainda em formação. Refazer a projeção a cada bimestre evita corrida de folha em dezembro.</p>
+        </div>
+        <div class="v">73,40%<small>posição atual</small></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>O risco de Aracati em 2026 não é falta de recurso — é <b>concentração de decisão no fim do ano</b>. Com R$ 79,64 milhões de margem livre e duas vinculações novas em aberto, cada mês sem empenho reduz a chance de liquidar dentro do exercício e empurra recurso para o teto de superávit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h5>Fontes primárias</h5>
+        <ul>
+          <li>Demonstrativo Fundeb SIOPE — Prefeitura Municipal de Aracati, 3º bimestre/2026, emitido em 31/07/2026</li>
+          <li>Painel de Indicadores do Fundeb — FNDE/MEC, exercício 2026</li>
+          <li>Portaria Interministerial MEC/MF nº 14/2025</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Base normativa</h5>
+        <ul>
+          <li>Art. 212-A da Constituição Federal, incisos XI, XIV e XV</li>
+          <li>Lei nº 14.113/2020 e Lei nº 14.276/2021</li>
+          <li>Art. 70 da Lei nº 9.394/1996 (LDB)</li>
+          <li>EC nº 135/2024 e Resolução MEC nº 23/2026</li>
+          <li>Nota Técnica SEI nº 5461/2025/MF</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Notas metodológicas</h5>
+        <ul>
+          <li>Previsto por componente conforme painel FNDE; a linha de impostos e transferências é obtida por diferença (R$ 146,89 Mi − R$ 80,59 Mi).</li>
+          <li>Recebido, empenhado e caixa referem-se a 30/06/2026. O painel do FNDE já registra R$ 87,27 Mi distribuídos até julho.</li>
+          <li>Projeções de exigência de 4% ETI e de 15% de capital do VAAT aplicam o percentual sobre a receita prevista para o ano cheio.</li>
+          <li>Percentuais de limites legais são apurados no fechamento do exercício; leituras bimestrais indicam trajetória.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Strategos AI Consulting · Gestão Estratégica e Inteligência Competitiva</span>
+      <span>Painel Fundeb · Aracati-CE · posição 3º bimestre/2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
